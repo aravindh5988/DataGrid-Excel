@@ -41,3 +41,12 @@
   Configure the associations from each cell to its corresponding row and column. Then select the attributes or dynamic text templates to display for cells, row headers, and column headers.
 
   Optional settings include filters, sorting, paging, export, click actions, frozen columns, and action columns.
+
+## Compatibility
+Mendix 11.12.1 or higher
+Web applications
+Offline-capable widget
+No third-party runtime dependencies
+
+## Screenshots
+
