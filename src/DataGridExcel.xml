@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="com.testwidgets.datagridexcel.DataGridExcel" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>CellForge Grid</name>
+    <description />
+    <studioProCategory>Data containers</studioProCategory>
+    <studioCategory>Data Containers</studioCategory>
+    <helpUrl>https://github.com/ClevrSolutions/dynamic-data-grid/blob/main/README.md</helpUrl>
+    <properties>
+        <propertyGroup caption="Data Source">
+            <propertyGroup caption="Cell">
+                <property key="dataSourceCell" type="datasource" isList="true">
+                    <caption>Data source</caption>
+                    <description />
+                </property>
+                <property key="showCellAs" type="enumeration" defaultValue="attribute">
+                    <caption>Show</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="attribute">Attribute</enumerationValue>
+                        <enumerationValue key="dynamicText">Dynamic text</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="cellTextTemplate" type="textTemplate" multiline="false" dataSource="dataSourceCell" required="false">
+                    <caption>Dynamic text</caption>
+                    <description />
+                    <translations>
+                        <translation lang="en_US" />
+                    </translations>
+                </property>
+                <property key="cellAttribute" type="attribute" dataSource="dataSourceCell" required="false">
+                    <caption>Attribute</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="AutoNumber" />
+                        <attributeType name="Boolean" />
+                        <attributeType name="Currency" />
+                        <attributeType name="DateTime" />
+                        <attributeType name="Decimal" />
+                        <attributeType name="Enum" />
+                        <attributeType name="Float" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="tooltipCell" type="textTemplate" required="false" dataSource="dataSourceCell">
+                    <caption>Tooltip</caption>
+                    <description />
+                </property>
+                <property key="cellClass" type="expression" required="false" dataSource="dataSourceCell">
+                    <caption>Dynamic class</caption>
+                    <description />
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+
+            <propertyGroup caption="Row">
+                <property key="referenceRow" type="association" selectableObjects="dataSourceRow" dataSource="dataSourceCell">
+                    <caption>Reference</caption>
+                    <description />
+                    <associationTypes>
+                        <associationType name="Reference" />
+                    </associationTypes>
+                </property>
+                <property key="dataSourceRow" type="datasource" isList="true">
+                    <caption>Data source</caption>
+                    <description />
+                </property>
+                <property key="showRowAs" type="enumeration" defaultValue="none">
+                    <caption>Show row header</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="none">None</enumerationValue>
+                        <enumerationValue key="attribute">Attribute</enumerationValue>
+                        <enumerationValue key="dynamicText">Dynamic text</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="rowTextTemplate" type="textTemplate" multiline="false" dataSource="dataSourceRow" required="false">
+                    <caption>Header text</caption>
+                    <description />
+                    <translations>
+                        <translation lang="en_US" />
+                    </translations>
+                </property>
+                <property key="rowAttribute" type="attribute" dataSource="dataSourceRow" required="false">
+                    <caption>Header attribute</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="AutoNumber" />
+                        <attributeType name="Boolean" />
+                        <attributeType name="Currency" />
+                        <attributeType name="DateTime" />
+                        <attributeType name="Decimal" />
+                        <attributeType name="Enum" />
+                        <attributeType name="Float" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="showRowColumnNameAs" type="enumeration" defaultValue="dynamicText">
+                    <caption>Corner header type</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="dynamicText">Dynamic text</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="rowColumnNameTextTemplate" required="false" type="textTemplate" multiline="false">
+                    <caption>Corner header text</caption>
+                    <description />
+                    <translations>
+                        <translation lang="en_US" />
+                    </translations>
+                </property>
+                <property key="tooltipRow" type="textTemplate" required="false" dataSource="dataSourceRow">
+                    <caption>Tooltip</caption>
+                    <description />
+                </property>
+                <property key="rowClass" type="expression" required="false" dataSource="dataSourceRow">
+                    <caption>Dynamic class</caption>
+                    <description />
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+
+            <propertyGroup caption="Column">
+                <property key="referenceColumn" type="association" selectableObjects="dataSourceColumn" dataSource="dataSourceCell">
+                    <caption>Reference</caption>
+                    <description />
+                    <associationTypes>
+                        <associationType name="Reference" />
+                    </associationTypes>
+                </property>
+                <property key="dataSourceColumn" type="datasource" isList="true">
+                    <caption>Data source</caption>
+                    <description />
+                </property>
+                <property key="showHeaderAs" type="enumeration" defaultValue="attribute">
+                    <caption>Show column header</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="none">None</enumerationValue>
+                        <enumerationValue key="firstRow">First row</enumerationValue>
+                        <enumerationValue key="attribute">Attribute</enumerationValue>
+                        <enumerationValue key="dynamicText">Dynamic text</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="headerAttribute" type="attribute" dataSource="dataSourceColumn" required="false">
+                    <caption>Header attribute</caption>
+                    <description />
+                    <attributeTypes>
+                        <attributeType name="AutoNumber" />
+                        <attributeType name="Boolean" />
+                        <attributeType name="Currency" />
+                        <attributeType name="DateTime" />
+                        <attributeType name="Decimal" />
+                        <attributeType name="Enum" />
+                        <attributeType name="Float" />
+                        <attributeType name="Integer" />
+                        <attributeType name="Long" />
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+                <property key="headerTextTemplate" type="textTemplate" multiline="false" dataSource="dataSourceColumn" required="false">
+                    <caption>Header text</caption>
+                    <description />
+                    <translations>
+                        <translation lang="en_US" />
+                    </translations>
+                </property>
+                <property key="tooltipColumn" type="textTemplate" required="false" dataSource="dataSourceColumn">
+                    <caption>Tooltip</caption>
+                    <description />
+                </property>
+                <property key="columnClass" type="expression" required="false" dataSource="dataSourceColumn">
+                    <caption>Dynamic class</caption>
+                    <description />
+                    <returnType type="String" />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <propertyGroup caption="Events">
+            <propertyGroup caption="Events">
+                <property key="onClickTrigger" type="enumeration" defaultValue="single">
+                    <caption>On click trigger</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="single">Single click</enumerationValue>
+                        <enumerationValue key="double">Double click</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Row header">
+                <property key="onClickRowHeader" type="action" required="false" dataSource="dataSourceRow">
+                    <caption>On click action</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Row">
+                <property key="onClickRow" type="action" required="false" dataSource="dataSourceRow">
+                    <caption>On click action</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Column header">
+                <property key="onClickColumnHeader" type="action" required="false" dataSource="dataSourceColumn">
+                    <caption>On click action</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Column">
+                <property key="onClickColumn" type="action" required="false" dataSource="dataSourceColumn">
+                    <caption>On click action</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Cell">
+                <property key="onClickCell" type="action" required="false" dataSource="dataSourceCell">
+                    <caption>On click action</caption>
+                    <description />
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+
+        <propertyGroup caption="Action Columns">
+            <property key="actionColumns" type="object" isList="true">
+                <caption>Action column</caption>
+                <description>Configure optional action columns containing Mendix widgets.</description>
+                <properties>
+                    <propertyGroup caption="General">
+                        <property key="caption" type="string" defaultValue="Action">
+                            <caption>Column name</caption>
+                            <description>Text displayed in the column header.</description>
+                        </property>
+                        <property key="width" type="integer" defaultValue="120">
+                            <caption>Width</caption>
+                            <description>Minimum width of this action column, in pixels.</description>
+                        </property>
+                        <property key="freeze" type="boolean" defaultValue="false">
+                            <caption>Freeze column</caption>
+                            <description>Keep this action column visible on the right while scrolling horizontally.</description>
+                        </property>
+                        <property key="content" type="widgets" dataSource="../dataSourceRow">
+                            <caption>Widgets</caption>
+                            <description>Widgets displayed for every row. Buttons and other widgets receive the current row as context.</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Frozen Columns">
+            <property key="freezeRowHeader" type="boolean" defaultValue="false">
+                <caption>Freeze row header</caption>
+                <description>Keep the Employee/row header visible on the left while scrolling.</description>
+            </property>
+            <property key="frozenRowHeaderWidth" type="integer" defaultValue="150">
+                <caption>Row header width</caption>
+                <description>Width of the frozen row header, in pixels.</description>
+            </property>
+            <property key="freezeColumn" type="expression" required="false" dataSource="dataSourceColumn">
+                <caption>Freeze data column</caption>
+                <description>Return true for each week/data column that should stay visible on the left.</description>
+                <returnType type="Boolean" />
+            </property>
+            <property key="frozenColumnWidth" type="integer" defaultValue="150">
+                <caption>Frozen data column width</caption>
+                <description>Width reserved for each frozen data column, in pixels.</description>
+            </property>
+            <property key="freezeActionColumns" type="boolean" defaultValue="false">
+                <caption>Freeze action columns</caption>
+                <description>Keep all Action Columns visible on the right while scrolling.</description>
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Filtering">
+            <property key="showRowFilter" type="boolean" defaultValue="true">
+                <caption>Show Employee filter</caption>
+                <description>Show or hide the text filter for the Employee/row header column.</description>
+            </property>
+            <property key="showColumnFilter" type="expression" required="false" dataSource="dataSourceColumn">
+                <caption>Show column filter</caption>
+                <description>Return true for each week/data column whose filter control should be displayed.</description>
+                <returnType type="Boolean" />
+            </property>
+        </propertyGroup>
+
+        <propertyGroup caption="Appearance">
+            <propertyGroup caption="Appearance">
+                <property key="renderAs" type="enumeration" defaultValue="grid">
+                    <caption>Show as</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="grid">Grid</enumerationValue>
+                        <enumerationValue key="table">Table</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="showEmptyPlaceholder" type="enumeration" defaultValue="none">
+                    <caption>Empty list message</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="none">None</enumerationValue>
+                    </enumerationValues>
+                </property>
+            </propertyGroup>
+
+            <propertyGroup caption="Paging">
+                <property key="paging" type="enumeration" defaultValue="none">
+                    <caption>Paging</caption>
+                    <description>When set to None all data are loaded</description>
+                    <enumerationValues>
+                        <enumerationValue key="none">None</enumerationValue>
+                        <enumerationValue key="row">Row</enumerationValue>
+                        <enumerationValue key="column">Column</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="pagingPosition" type="enumeration" defaultValue="bottom">
+                    <caption>Paging position</caption>
+                    <description />
+                    <enumerationValues>
+                        <enumerationValue key="bottom">Below grid</enumerationValue>
+                        <enumerationValue key="top">Above grid</enumerationValue>
+                        <enumerationValue key="both">Both</enumerationValue>
+                    </enumerationValues>
+                </property>
+                <property key="pageSize" type="integer" defaultValue="20">
+                    <caption>Page size</caption>
+                    <description />
+                </property>
+                <property key="pageCell" type="boolean" defaultValue="false">
+                    <caption>Optimize cell paging</caption>
+                    <description>Only enable when each row/column has a cell, and sorting of the cells and rows/column are are equal. Using data source Database or XPath. Does not support add/deletes.</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Tools">
+                <property key="showSearch" type="boolean" defaultValue="true">
+                    <caption>Show filter row</caption>
+                    <description>When enabled, displays the row and type-specific column filters above the grid.</description>
+                </property>
+                <property key="showExport" type="boolean" defaultValue="true">
+                    <caption>Show export</caption>
+                    <description>Exports the currently visible grid to an Excel-compatible CSV file.</description>
+                </property>
+                <property key="showSorting" type="boolean" defaultValue="true">
+                    <caption>Show sorting</caption>
+                    <description>Displays row and column sort controls above the grid.</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>

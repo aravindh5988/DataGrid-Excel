@@ -1,0 +1,74 @@
+.datagrid-excel { background: #fff; border: 1px solid #d7dde5; border-radius: 6px; color: #243447; font: 14px/1.4 Arial, sans-serif; min-height: 80px; overflow: hidden; }
+.datagrid-excel__toolbar { align-items: center; background: #f6f8fa; border-bottom: 1px solid #d7dde5; display: flex; gap: 8px; padding: 10px; }
+.datagrid-excel__search { border: 1px solid #b9c4d0; border-radius: 4px; flex: 1; min-width: 120px; padding: 7px 9px; }
+.datagrid-excel button { background: #fff; border: 1px solid #b9c4d0; border-radius: 4px; color: #243447; cursor: pointer; padding: 6px 10px; }
+.datagrid-excel button:hover:not(:disabled) { background: #e8f2ff; }
+.datagrid-excel button:disabled { cursor: default; opacity: .5; }
+.datagrid-excel__columns { position: relative; }
+.datagrid-excel__columns[open] { background: #fff; border: 1px solid #b9c4d0; box-shadow: 0 4px 12px #0002; padding: 6px; position: absolute; right: 12px; top: 43px; z-index: 2; }
+.datagrid-excel__columns label { display: block; padding: 3px 6px; white-space: nowrap; }
+.datagrid-excel__scroll { overflow: auto; }
+.datagrid-excel table { border-collapse: collapse; min-width: 100%; width: max-content; }
+.datagrid-excel th { background: #edf1f5; border-bottom: 2px solid #b9c4d0; font-weight: 600; text-align: left; white-space: nowrap; }
+.datagrid-excel th button { background: transparent; border: 0; border-radius: 0; font: inherit; font-weight: inherit; padding: 10px 12px; text-align: left; width: 100%; }
+.datagrid-excel td { border-bottom: 1px solid #e1e6eb; min-width: 130px; padding: 0; }
+.datagrid-excel tr:hover td { background: #f5faff; }
+.datagrid-excel td > input { background: transparent; border: 1px solid transparent; box-sizing: border-box; color: inherit; font: inherit; min-width: 130px; padding: 9px 12px; width: 100%; }
+.datagrid-excel td > input:focus { background: #fff; border-color: #2b78c5; outline: 2px solid #2b78c544; }
+.datagrid-excel__empty { color: #687789; padding: 24px; text-align: center; }
+.datagrid-excel__pagination { align-items: center; border-top: 1px solid #d7dde5; display: flex; gap: 10px; justify-content: flex-end; padding: 9px 10px; }
+
+.datagrid-excel-tools { position: relative; }
+.datagrid-excel-tools .widget-datagrid-content { overflow-x: auto; overscroll-behavior-x: contain; }
+.datagrid-excel-tools .widget-datagrid-grid { min-width: max-content; }
+.datagrid-excel-tools__toolbar { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.datagrid-excel-tools__search { display: flex; flex: 1 1 360px; gap: 8px; }
+.datagrid-excel-tools__search input { border: 1px solid #b9c4d0; border-radius: 4px; min-width: 160px; padding: 7px 9px; }
+.datagrid-excel-tools__columns { position: relative; }
+.datagrid-excel-tools__header-picker { position: absolute; right: 12px; top: 56px; z-index: 5; }
+.datagrid-excel-tools__columns-button { align-items: center; background: #fff; border: 1px solid #dfe3e8; border-radius: 5px; color: #2455ff; cursor: pointer; display: flex; height: 37px; justify-content: center; padding: 0; width: 37px; }
+.datagrid-excel-tools__columns-button:hover { background: #f2f5ff; border-color: #b9c4d0; }
+.datagrid-excel-tools__columns-button svg { fill: none; height: 18px; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; width: 18px; }
+.datagrid-excel-tools__columns-menu { background: #fff; border: 1px solid #c5ccd5; border-radius: 3px; box-shadow: 0 6px 18px rgb(0 0 0 / 18%); min-width: 180px; padding: 4px 0; position: absolute; right: 0; top: calc(100% + 5px); z-index: 10; }
+.datagrid-excel-tools__columns-menu--fixed { min-width: 220px; overflow-y: auto; overscroll-behavior: contain; position: fixed; right: auto; z-index: 10000; }
+.datagrid-excel-tools__columns-menu label { align-items: center; cursor: pointer; display: flex; gap: 9px; margin: 0; padding: 8px 12px; white-space: nowrap; }
+.datagrid-excel-tools__columns-menu label:hover { background: #f2f5ff; }
+.datagrid-excel-tools__columns-menu input { accent-color: #2e58e8; height: 18px; margin: 0; width: 18px; }
+.datagrid-excel-tools__filter-cell, .datagrid-excel-tools__filter-picker { align-items: center; border-bottom: 1px solid #dfe3e8; box-sizing: border-box; display: flex; min-height: 64px; padding: 8px; }
+.datagrid-excel-tools__filter-cell input, .datagrid-excel-tools__filter-cell select { border: 1px solid #dfe3e8; border-radius: 4px; box-sizing: border-box; flex: 1; font: inherit; min-width: 0; padding: 8px 9px; width: 100%; }
+.datagrid-excel-tools__filter-cell--empty { background: #fff; }
+.datagrid-excel-tools__filter-cell input:focus, .datagrid-excel-tools__filter-cell select:focus { border-color: #2e58e8; box-shadow: 0 0 0 2px rgb(46 88 232 / 15%); outline: 0; }
+.datagrid-excel-tools__filter-picker { align-items: center; border-bottom: 1px solid #dfe3e8; box-sizing: border-box; display: flex; justify-content: center; min-height: 64px; padding: 8px; }
+.datagrid-excel-tools__filter-action-spacer { border-bottom: 1px solid #dfe3e8; min-width: 112px; }
+.datagrid-excel-tools .widget-datagrid-grid .td:has(.datagrid-excel-tools__filter-picker),
+.datagrid-excel-tools .widget-dynamic-data-grid td:has(.datagrid-excel-tools__filter-picker) {
+    background: #fff;
+    box-shadow: -3px 0 6px rgb(0 0 0 / 8%);
+    position: sticky;
+    right: 0;
+    z-index: 4;
+}
+.datagrid-excel-tools__filter-cell .datagrid-excel-tools__columns { flex: 0 0 auto; margin-left: 8px; }
+.datagrid-excel-tools--filters-hidden .datagrid-excel-tools__filter-cell,
+.datagrid-excel-tools--filters-hidden .datagrid-excel-tools__filter-picker { border: 0; min-height: 0; padding: 0; }
+.datagrid-excel-tools--filters-hidden .datagrid-excel-tools__filter-picker .datagrid-excel-tools__columns { transform: translateY(-50px); }
+.datagrid-excel-tools--filters-hidden .widget-datagrid-grid { box-sizing: border-box; padding-right: 64px; width: 100%; }
+.datagrid-excel-tools__export { background: #fff; border: 1px solid #b9c4d0; border-radius: 4px; cursor: pointer; padding: 7px 10px; }
+.datagrid-excel-tools__action-cell { min-width: 112px; padding: 8px; text-align: center; }
+.datagrid-excel-tools__action-content { align-items: center; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.datagrid-excel-tools__row-action { background: #fff; border: 1px solid #2e58e8; border-radius: 4px; color: #2455ff; cursor: pointer; font: inherit; padding: 6px 10px; white-space: nowrap; }
+.datagrid-excel-tools__row-action:hover:not(:disabled) { background: #f2f5ff; }
+.datagrid-excel-tools__row-action:disabled { cursor: default; opacity: .55; }
+.datagrid-excel-tools__sorting { display: flex; gap: 6px; }
+.datagrid-excel-tools__sorting button { background: #fff; border: 1px solid #b9c4d0; border-radius: 4px; cursor: pointer; padding: 7px 10px; white-space: nowrap; }
+.datagrid-excel-tools--column-sorting .datagrid-excel-tools__sorting { display: none; }
+.datagrid-excel-tools--column-sorting .widget-datagrid-grid-head .th .column-header { cursor: pointer; }
+.datagrid-excel-tools--column-sorting .widget-datagrid-grid-head .th .column-header::after { color: #697386; content: " ↕"; font-size: 14px; margin-left: 6px; }
+.datagrid-excel-tools--column-sorting .widget-dynamic-data-grid th { cursor: pointer; }
+.datagrid-excel-tools--column-sorting .widget-datagrid-grid-head .th:has(.datagrid-excel-tools__columns) .column-header::after,
+.datagrid-excel-tools--column-sorting .widget-dynamic-data-grid th:has(.datagrid-excel-tools__columns)::after { display: none; }
+.datagrid-excel-tools--column-sorting .datagrid-excel-tools__column-picker-header .column-header::after,
+.datagrid-excel-tools--column-sorting .widget-dynamic-data-grid .datagrid-excel-tools__column-picker-header::after { display: none; }
+.datagrid-excel-tools--filter-visible .widget-datagrid-grid-head .th:last-child .column-header::after,
+.datagrid-excel-tools--filter-visible .widget-dynamic-data-grid th:last-child::after { display: none; }
+.datagrid-excel-tools--column-sorting .widget-dynamic-data-grid th::after { color: #697386; content: " ↕"; font-size: 14px; margin-left: 6px; }
