@@ -43,10 +43,10 @@
   Optional settings include filters, sorting, paging, export, click actions, frozen columns, and action columns.
 
 ## Compatibility
-Mendix 11.12.1 or higher
-Web applications
-Offline-capable widget
-No third-party runtime dependencies
+- Mendix 11.12.1 or higher
+- Web applications
+- Offline-capable widget
+- No third-party runtime dependencies
 
 ## Screenshots
 
