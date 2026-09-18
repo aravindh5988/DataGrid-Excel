@@ -49,4 +49,13 @@
 - No third-party runtime dependencies
 
 ## Screenshots
+<img width="1778" height="725" alt="Screenshot_1" src="https://github.com/user-attachments/assets/67088180-6031-4c6b-a28d-a50bbe0eb032" />
+<img width="1790" height="793" alt="Screenshot_1_1" src="https://github.com/user-attachments/assets/fb991e85-1a23-4971-9c28-722caf13ef79" />
+<img width="1919" height="1028" alt="Screenshot_1_3" src="https://github.com/user-attachments/assets/18d0cbbc-5eb7-4044-9667-ec322776a66a" />
+<img width="1919" height="1004" alt="Screenshot_3" src="https://github.com/user-attachments/assets/07d15e89-1249-4964-b2dc-ddb33651922a" />
+<img width="1919" height="1001" alt="Screenshot_4" src="https://github.com/user-attachments/assets/22d894b1-42c3-439b-a7ea-ecf690b2762d" />
+
+
+
+
 
