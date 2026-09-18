@@ -1,13 +1,43 @@
-# Data Grid Excel for Mendix
+# DataGrid Excel
 
-`datagridExcel` is a Mendix web pluggable widget that matches the installed Dynamic Data Grid under the `DataGridExcel` package identity.
+  DataGrid Excel is a flexible Excel-style grid widget for Mendix web applications. It displays dynamic rows and columns from Mendix data sources, making it useful for planning, schedules, timesheets, resource
+  allocation, and matrix-style data entry.
 
-It uses the Dynamic Data Grid's cell, row, and column data sources, reference associations, display modes, dynamic classes and tooltips, click actions, rendering choices, paging, and empty placeholder.
+  ## Features
 
-## Build
+  - Dynamic rows, columns, and cells
+  - Inline cell editing
+  - Row and column filtering
+  - Configurable sorting
+  - Paging with adjustable page size
+  - CSV export of the visible grid
+  - Show or hide individual columns
+  - Attribute or dynamic-text rendering
+  - Dynamic CSS classes and tooltips
+  - Row, column, and cell click actions
+  - Optional action columns with Mendix widgets
+  - Freeze row headers, data columns, and action columns
+  - Grid or plain-table rendering
 
-1. Run `npm install` in this folder.
-2. Run `npm run release`.
-3. Synchronize the Mendix app directory. The output is `widgets/com.testwidgets.DataGridExcel.mpk`.
+  ## Typical Use Cases
 
-Configure **Data source**, **Column 1 attribute**, and its caption in Studio Pro. Columns 2–6 are optional. In-cell edits call Mendix `setTextValue`, so normal widget validation and access rules apply.
+  - Resource and capacity planning
+  - Employee timesheets
+  - Project and sprint planning
+  - Weekly or monthly schedules
+  - Budget and financial matrices
+  - Product and inventory planning
+  - Data-entry matrices
+  - Reporting dashboards
+
+  ## Mendix Configuration
+
+  Configure three list data sources:
+
+  - **Cell data source** — the data displayed in each grid cell
+  - **Row data source** — the records displayed as row headers
+  - **Column data source** — the records displayed as column headers
+
+  Configure the associations from each cell to its corresponding row and column. Then select the attributes or dynamic text templates to display for cells, row headers, and column headers.
+
+  Optional settings include filters, sorting, paging, export, click actions, frozen columns, and action columns.
